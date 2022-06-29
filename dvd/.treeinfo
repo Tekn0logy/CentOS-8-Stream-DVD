@@ -1,0 +1,67 @@
+[checksums]
+images/efiboot.img = sha256:8df8d4a9fd67ca16019b3ced372142fa02eb2344777ba75f4c6ca7e4b66d1e2b
+images/install.img = sha256:6020167de4b98b9b7e76caf0c19e7b43f593f52f7dd67d1c8e55966e4fc02aa0
+images/pxeboot/initrd.img = sha256:8008fedfe573b1cf34f538aa4f2e65bcd3010ddff0a548a99f47675c34c7546f
+images/pxeboot/vmlinuz = sha256:dedc8df5c1ba2893d99d83e33a867ace49779b985f00bd1c0f7484440f81a4f2
+
+[general]
+; WARNING.0 = This section provides compatibility with pre-productmd treeinfos.
+; WARNING.1 = Read productmd documentation for details about new format.
+arch = x86_64
+family = CentOS Stream
+name = CentOS Stream 8
+packagedir = AppStream/Packages
+platforms = x86_64,xen
+repository = AppStream
+timestamp = 1656333871
+variant = AppStream
+variants = AppStream,BaseOS
+version = 8
+
+[header]
+type = productmd.treeinfo
+version = 1.2
+
+[images-x86_64]
+efiboot.img = images/efiboot.img
+initrd = images/pxeboot/initrd.img
+kernel = images/pxeboot/vmlinuz
+
+[images-xen]
+initrd = images/pxeboot/initrd.img
+kernel = images/pxeboot/vmlinuz
+
+[media]
+discnum = 1
+totaldiscs = 1
+
+[release]
+name = CentOS Stream
+short = CentOS-Stream
+version = 8
+
+[stage2]
+mainimage = images/install.img
+
+[tree]
+arch = x86_64
+build_timestamp = 1656333871
+platforms = x86_64,xen
+variants = AppStream,BaseOS
+
+[variant-AppStream]
+id = AppStream
+name = AppStream
+packages = AppStream/Packages
+repository = AppStream
+type = variant
+uid = AppStream
+
+[variant-BaseOS]
+id = BaseOS
+name = BaseOS
+packages = BaseOS/Packages
+repository = BaseOS
+type = variant
+uid = BaseOS
+

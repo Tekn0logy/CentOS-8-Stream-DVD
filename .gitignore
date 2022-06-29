@@ -1,0 +1,11 @@
+*.bin
+*.c32
+*.efi
+*.EFI
+*.gz
+*.img
+*.pf2
+*.rpm
+*.xz
+memtest
+vmlinuz
